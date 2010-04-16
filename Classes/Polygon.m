@@ -28,7 +28,6 @@
 }
 
 -(void)DrawAtContext: (CGContextRef) context {
-	[super DrawAtContext:context];
 	for(PairDot *pair in pairDot_){
 		[self DrawLineAtContext:context from:pair.one to:pair.two];
 	}

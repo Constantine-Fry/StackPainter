@@ -14,16 +14,13 @@
 - (id) init{
 	self = [super init];
 	if (self != nil) {
-		
 		type_ = 2;
-		//isFull_ = NO;
 	}
 	return self;
 }
 
 
 - (void)DrawAtContext: (CGContextRef) context{
-	[super DrawAtContext:context];
 	PairDot* pair = [pairDot_ objectAtIndex:0];
 	Dot *notCenter = pair.one;
 	Dot *center = pair.two;

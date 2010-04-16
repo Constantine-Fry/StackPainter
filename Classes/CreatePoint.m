@@ -29,18 +29,12 @@
 
 -(void)Do{
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
-	//[mainDelegate.points Push:point_];
-	//Shape *shape = [mainDelegate.shapes lastObject];
-	//[shape EatThisDots:mainDelegate.points];
 	[mainDelegate.model AddPoint:point_];
 }
 
 -(void)Undo{
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[mainDelegate.model.shapes Push:point_.Parent];
-	[mainDelegate.model.points PushFromStack:[point_.Parent Flush]];
-	[mainDelegate.model RemoveLastPoint];
-	//[mainDelegate.points removeLastObject];
+	[mainDelegate.model RemovePoint:point_];
 }
 
 

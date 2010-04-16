@@ -10,6 +10,7 @@
 
 
 @implementation Stack
+@synthesize array = array_;
 
 - (id)init{
 	self = [super init];
@@ -33,8 +34,10 @@
 	id dot = [stack Pop];
 	while (nil != dot) {
 		[self Push:dot];
+		[dot release];
 		dot = [stack Pop];
 	}
+	[dot release];
 }
 
 -(id)Pop{

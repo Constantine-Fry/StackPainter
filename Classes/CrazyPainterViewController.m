@@ -17,6 +17,7 @@
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
 	id<AbstractCommand> command = [mainDelegate.commands Pop];
 	[command Undo];
+	[command release];
 	[self.view setNeedsDisplay];
 }
 

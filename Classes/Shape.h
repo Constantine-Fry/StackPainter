@@ -10,19 +10,20 @@
 
 #import "Stack.h"
 #import "Dot.h"
+
+
 @interface Shape : NSObject {
 	int type_;
-	//BOOL isFull_;
 	NSMutableArray* temp_;
 	NSMutableArray* pairDot_;
 }
 
 @property (readonly) int Type;
 @property (readonly) NSMutableArray* Dots;
-//@property (readonly) BOOL IsFull;
+
 -(BOOL)isFull;
 -(void)DrawLineAtContext:(CGContextRef)context from:(Dot*)one to:(Dot*)two;
 -(void)DrawAtContext: (CGContextRef) context;
--(Shape*)EatThisDots:(Stack*)dots;
+-(void)EatThisDots:(Stack*)dots;
 -(Stack*)Flush;
 @end

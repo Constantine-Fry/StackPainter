@@ -53,13 +53,13 @@
 	[pair release];
 }
 
--(Shape*)EatThisDots:(Stack*)dots{
+-(void)EatThisDots:(Stack*)dots{
 	if(([self isFull] == YES)){
-		return nil;
+		return;
 	}
 	
 	if ([self Type] > [dots Count]) {
-		return nil;
+		return;
 	}
 	
 	Dot *dot = [dots Pop];
@@ -73,7 +73,7 @@
 		}
 		dot = [dots Pop];
 	}
-	return nil;
+	return;
 }
 
 -(void)DrawLineAtContext:(CGContextRef)context from:(Dot*)one to:(Dot*)two{
@@ -90,8 +90,6 @@
 }
 
 -(Stack*)Flush{
-	//isFull_ = NO;
-//	[pairDot_ removeAllObjects];
 	[pairDot_ release];
 	pairDot_ = nil;
 	Stack *stack = [[Stack alloc]init];
@@ -102,9 +100,5 @@
 	[temp_ removeAllObjects];
 	return [stack autorelease];
 }
--(void)DrawAtContext: (CGContextRef) context{
-	if([self isFull] == NO)
-		for(Dot* dot in temp_)
-			[dot DrawAtContext:context];
-}
+
 @end

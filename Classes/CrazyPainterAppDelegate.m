@@ -13,16 +13,11 @@
 
 @synthesize window;
 @synthesize viewController;
-//@synthesize points = points_;
-//@synthesize shapes = shapes_;
 @synthesize commands = commands_;
 @synthesize model = model_;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
     // Override point for customization after app launch  
-//	points_ = [[Stack alloc]init];
-//	shapes_ = [[NSMutableArray alloc]init];
 	commands_ = [[Stack alloc]init];
 	model_ = [[Model alloc]init];
     [window addSubview:viewController.view];

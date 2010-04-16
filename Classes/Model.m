@@ -9,9 +9,14 @@
 #import "Model.h"
 
 
+@interface Model(PrivateMessage)
+-(void)RemoveLastPoint;
+-(void)RemoveLastShape;
+-(void)RemoveLastDrawShape;
+-(void)Update;
+@end
+
 @implementation Model
-@synthesize points = points_;
-@synthesize shapes = shapes_;
 @synthesize shapesForDraw = shapesForDraw_;
 
 
@@ -34,6 +39,23 @@
 	[super dealloc];
 }
 
+-(int)PointCount{
+	int a = 0;
+	for(Shape *shape in shapesForDraw_)
+		a += shape.Type;
+	return ([points_ Count]+a);
+}
+
+-(NSArray*)pointForDraw{
+	return points_.array;
+}
+
+-(NSArray*)shapesInStack{
+	return shapes_.array;
+}
+
+
+#pragma mark Add
 
 -(void)AddPoint:(Dot*)dot{
 	[points_ Push:dot];
@@ -44,6 +66,28 @@
 	[shapes_ Push:shape];
 	[self Update];
 }
+
+#pragma mark Remove 
+
+-(void)RemovePoint:(Dot*)dot{
+	if (nil != dot.Parent) {
+		[shapes_ Push: [shapesForDraw_ lastObject]];
+		[shapesForDraw_ removeLastObject];
+	}
+	[points_ PushFromStack:[dot.Parent Flush]];
+	[self RemoveLastPoint];
+}
+
+-(void)RemoveShape:(Shape*)shape{
+	if ([shape isFull]) {
+		[self RemoveLastDrawShape];
+	}else{
+		[self RemoveLastShape];
+	}
+}
+
+
+#pragma mark PrivateMessage
 
 -(void)Update{
 	Shape *sh = [shapes_ Pop];

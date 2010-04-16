@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-
+@class PreviewFactory;
 @interface ShapeBar : UIView {
 	NSArray *shapes_;
+	PreviewFactory *fac_;
 }
 
 -(id)initWithShapes:(NSArray*)shapes andFrame:(CGRect)frame; 

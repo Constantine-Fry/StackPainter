@@ -17,6 +17,7 @@
 	if (self != nil) {
 		[self setFrame:frame];
 		shapes_ = [shapes retain];
+		fac_ = [[PreviewFactory alloc]init];
 		[self Redraw];
 	}
 	return self;
@@ -31,9 +32,9 @@
 -(void)Redraw{
 	[self RemoveAllSubviews];
 	int i = 0;
-	PreviewFactory *fac = [[PreviewFactory alloc]init];
+	
 	for(Shape *shape in shapes_){
-		UIImageView *iView = [[UIImageView alloc]initWithImage:[fac GetImageByShape:shape]];
+		UIImageView *iView = [[UIImageView alloc]initWithImage:[fac_ GetImageByShape:shape]];
 		CGRect rect = iView.frame;
 		rect.origin.x = i*rect.size.width;
 		[iView setFrame:rect];
@@ -44,6 +45,7 @@
 }
 
 - (void) dealloc{
+	[fac_ release];
 	[shapes_ release];
 	[super dealloc];
 }

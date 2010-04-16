@@ -13,6 +13,7 @@
 	NSMutableArray *array_;
 }
 
+@property (readonly) NSMutableArray *array;
 -(int)Count;
 -(void)Push:(id)obj;
 -(void)PushFromStack:(Stack*)stack;

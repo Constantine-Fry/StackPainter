@@ -13,16 +13,12 @@
 @class CrazyPainterViewController;
 
 @interface CrazyPainterAppDelegate : NSObject <UIApplicationDelegate> {
-	//Stack *points_;
-//	NSMutableArray *shapes_;
 	Model *model_;
 	Stack *commands_;
     UIWindow *window;
     CrazyPainterViewController *viewController;
 }
 
-//@property(nonatomic,readonly) Stack *points;
-//@property(nonatomic,readonly) NSMutableArray *shapes;
 @property(nonatomic,readonly) Stack *commands;
 @property (nonatomic,retain) Model* model;
 

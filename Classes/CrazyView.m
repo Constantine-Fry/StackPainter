@@ -21,7 +21,7 @@
 		currentColor_ = [UIColor whiteColor];
 	if(nil == shapsBar_ ){
 		CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];		
-		//shapsBar_ = [[ShapeBar alloc]initWithShapes:mainDelegate.model.shapes andFrame:CGRectMake(0, 0, 320, 15)];
+		shapsBar_ = [[ShapeBar alloc]initWithShapes:mainDelegate.model.shapesInStack andFrame:CGRectMake(0, 0, 320, 15)];
 		[self addSubview:shapsBar_];
 	}
 }
@@ -32,8 +32,7 @@
 	CGContextScaleCTM(context, 1, -1);
 	CGContextSelectFont (context, "Helvetica", 30, kCGEncodingMacRoman);
 	CGContextSetTextDrawingMode( context, kCGTextFillStroke );
-	// FIXME: узменить коунт
-	NSNumber *num = [NSNumber numberWithInt:[mainDelegate.model.points Count]];
+	NSNumber *num = [NSNumber numberWithInt:[mainDelegate.model PointCount]];
 	NSString *str =[num stringValue];
 	CGContextShowTextAtPoint (context, 280, 410, [str UTF8String], [str length]);
 }
@@ -49,17 +48,8 @@
 -(void)DrawPoints:(CGContextRef)context{
 	CrazyPainterAppDelegate *mainDelegate = 
 	(CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
-	Stack *tempDot = [[Stack alloc]init];
-	Dot *dot = [mainDelegate.model.points Pop];
-	while(nil != dot){
-		[tempDot Push:dot];
-		dot.Parent = nil;
+	for(Dot *dot in mainDelegate.model.pointForDraw)
 		[dot DrawAtContext:context];
-		[dot release];
-		dot = [mainDelegate.model.points Pop];
-	}
-	[mainDelegate.model.points PushFromStack:tempDot];
-	[tempDot release];
 	CGContextDrawPath(context, kCGPathFillStroke);
 }
 

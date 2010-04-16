@@ -43,7 +43,6 @@
 }
 
 -(void)Do{
-	//Shape *shape = nil;
 	switch (type_) {
 		case CIRCLE:{
 			shape_ = [[Circle alloc]init];
@@ -61,25 +60,15 @@
 			break;
 	}
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)
-			[[UIApplication sharedApplication] delegate];
-	//[mainDelegate.shapes Push:shape];
-	//[mainDelegate.shapes addObject:shape];
+	[[UIApplication sharedApplication] delegate];
 	[mainDelegate.model AddShape:shape_];
-	//[shape release];
 }
 
 -(void)Undo{
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)
-			[[UIApplication sharedApplication] delegate];
+	[[UIApplication sharedApplication] delegate];
+	[mainDelegate.model RemoveShape:shape_];
 	
-	if ([shape_ isFull]) {
-		[mainDelegate.model RemoveLastDrawShape];
-		 }else{
-			 [mainDelegate.model RemoveLastShape];
-		 }
-//	Shape *shape = [mainDelegate.model.shapes lastObject];
-//	[mainDelegate.model.points PushFromStack:[shape Flush]];
-//	[mainDelegate.model.shapes removeLastObject];
 }
 
 

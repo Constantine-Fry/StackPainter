@@ -30,6 +30,12 @@ static NSMutableDictionary *dic;
 	}
 	return self;
 }
+- (void) dealloc
+{
+	[dic release];
+	[super dealloc];
+}
+
 
 -(UIImage*)GetImageByShape:(Shape*)shape{
 	NSArray *arr = [dic objectForKey:[NSNumber numberWithInt:shape.Type]];
