@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "AbstractCommand.h"
 
+@class Shape;
 @interface CreateShape : NSObject<AbstractCommand> {
 	int type_;
+	Shape *shape_;
 }
 
 - (id) initCircleCreator;

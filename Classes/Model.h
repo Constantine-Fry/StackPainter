@@ -20,12 +20,14 @@
 
 @property (retain,nonatomic) Stack* points;
 @property (retain,nonatomic) Stack* shapes;
+@property (retain,nonatomic) NSMutableArray * shapesForDraw;
 
 -(void)AddPoint:(Dot*)dot;
 -(void)AddShape:(Shape*)shape;
 
 -(void)RemoveLastPoint;
 -(void)RemoveLastShape;
+-(void)RemoveLastDrawShape;
 
 -(void)Update;
  // TODO: cделать метод коунт для возвращения количества точек

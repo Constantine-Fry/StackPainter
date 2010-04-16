@@ -21,7 +21,7 @@
 		currentColor_ = [UIColor whiteColor];
 	if(nil == shapsBar_ ){
 		CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];		
-		shapsBar_ = [[ShapeBar alloc]initWithShapes:mainDelegate.model.shapes andFrame:CGRectMake(0, 0, 320, 15)];
+		//shapsBar_ = [[ShapeBar alloc]initWithShapes:mainDelegate.model.shapes andFrame:CGRectMake(0, 0, 320, 15)];
 		[self addSubview:shapsBar_];
 	}
 }
@@ -41,7 +41,7 @@
 -(void)DrawShapes:(CGContextRef)context{
 	CrazyPainterAppDelegate *mainDelegate = 
 	(CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
-	for(Shape* shape in mainDelegate.model.shapes){
+	for(Shape* shape in mainDelegate.model.shapesForDraw){
 		[shape DrawAtContext:context];
 	}
 }

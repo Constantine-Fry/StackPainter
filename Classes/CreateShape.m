@@ -43,33 +43,40 @@
 }
 
 -(void)Do{
-	Shape *shape = nil;
+	//Shape *shape = nil;
 	switch (type_) {
 		case CIRCLE:{
-			shape = [[Circle alloc]init];
+			shape_ = [[Circle alloc]init];
 			break;
 		}
 		case TRIANGLE:{
-			shape = [[Polygon alloc]initTriangle];
+			shape_ = [[Polygon alloc]initTriangle];
 			break;
 		}				
 		case FIVE:{
-			shape = [[Polygon alloc]initPentagon];
+			shape_ = [[Polygon alloc]initPentagon];
 			break;
 		}
 		default:
 			break;
 	}
-	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
+	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)
+			[[UIApplication sharedApplication] delegate];
 	//[mainDelegate.shapes Push:shape];
 	//[mainDelegate.shapes addObject:shape];
-	[mainDelegate.model AddShape:shape];
-	[shape release];
+	[mainDelegate.model AddShape:shape_];
+	//[shape release];
 }
 
 -(void)Undo{
-	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[mainDelegate.model RemoveLastShape];
+	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)
+			[[UIApplication sharedApplication] delegate];
+	
+	if ([shape_ isFull]) {
+		[mainDelegate.model RemoveLastDrawShape];
+		 }else{
+			 [mainDelegate.model RemoveLastShape];
+		 }
 //	Shape *shape = [mainDelegate.model.shapes lastObject];
 //	[mainDelegate.model.points PushFromStack:[shape Flush]];
 //	[mainDelegate.model.shapes removeLastObject];

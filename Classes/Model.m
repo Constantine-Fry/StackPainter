@@ -12,14 +12,16 @@
 @implementation Model
 @synthesize points = points_;
 @synthesize shapes = shapes_;
+@synthesize shapesForDraw = shapesForDraw_;
 
 
 - (id) init
 {
 	self = [super init];
 	if (self != nil) {
-		shapes_ = [[NSMutableArray alloc]init];
+		shapes_ = [[Stack alloc]init];
 		points_ = [[Stack alloc]init];
+		shapesForDraw_ = [[NSMutableArray alloc]init];
 	}
 	return self;
 }
@@ -28,6 +30,7 @@
 {
 	[shapes_ release];
 	[points_ release];
+	[shapesForDraw_ release];
 	[super dealloc];
 }
 
@@ -61,6 +64,13 @@
 -(void)RemoveLastShape{
 	Shape *shape = [shapes_ Pop];
 	[points_ PushFromStack:[shape Flush]];
+	[shape release];
+}
+
+-(void)RemoveLastDrawShape{
+	Shape *shape = [shapesForDraw_ lastObject];
+	[points_ PushFromStack:[shape Flush]];
+	[shapesForDraw_ removeLastObject];
 	[shape release];
 }
 

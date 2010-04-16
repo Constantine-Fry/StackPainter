@@ -37,6 +37,7 @@
 
 -(void)Undo{
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[mainDelegate.model.shapes Push:point_.Parent];
 	[mainDelegate.model.points PushFromStack:[point_.Parent Flush]];
 	[mainDelegate.model RemoveLastPoint];
 	//[mainDelegate.points removeLastObject];

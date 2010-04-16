@@ -96,6 +96,7 @@
 	pairDot_ = nil;
 	Stack *stack = [[Stack alloc]init];
 	for(Dot *dot in temp_){
+		dot.Parent = nil;
 		[stack Push:dot];
 	}
 	[temp_ removeAllObjects];
