@@ -25,8 +25,6 @@
 	[super dealloc];
 }
 
-
-
 -(void)Do{
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[mainDelegate.model AddPoint:point_];
@@ -36,6 +34,7 @@
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[mainDelegate.model RemovePoint:point_];
 }
+
 
 
 @end

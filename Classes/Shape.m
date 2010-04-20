@@ -80,6 +80,11 @@
 	if(one != nil && two != nil){
 		CGContextMoveToPoint(context, one.point.x, one.point.y);
 		CGContextAddLineToPoint(context, two.point.x, two.point.y);
+		//CGColorSpaceRef cspace = CGColorSpaceCreateDeviceRGB();
+//		float comp[] = { .2,.1,1.0,1.0,1.0,1.0,1.0,1.0};
+//		CGGradientRef gradient = CGGradientCreateWithColorComponents(cspace, comp, NULL, 2);
+//
+//		CGContextDrawLinearGradient(context,  gradient, one.point, two.point, 0);
 		return;
 	}
 	if(two == nil){

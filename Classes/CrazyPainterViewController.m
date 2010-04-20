@@ -17,7 +17,7 @@
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
 	id<AbstractCommand> command = [mainDelegate.commands Pop];
 	[command Undo];
-	[command release];
+	[(id)command release];
 	[self.view setNeedsDisplay];
 }
 
@@ -47,13 +47,15 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { 
-	UITouch* touch = [touches anyObject];
+	NSSet *arr = [event allTouches];
+	for(UITouch *touch in arr){
 	CreatePoint *command = [[CreatePoint alloc]initWithPoint:[touch locationInView:self.view]];
 	@try{
 		[self PushIt:command];
 	}
 	@finally {
 		[command release];
+	}
 	}
 } 
 
