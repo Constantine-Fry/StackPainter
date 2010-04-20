@@ -18,5 +18,10 @@
 -(IBAction)ThreeClick;
 -(IBAction)FiveClick;
 -(IBAction)UndoClick;
+-(IBAction)ClearClick;
+-(IBAction)OpenClick;
+-(IBAction)SaveClick;
+
+-(void)SetText:(NSString*)text;
 @end
 

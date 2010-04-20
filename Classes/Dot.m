@@ -27,4 +27,21 @@
 	
 }
 
+// -----------------------------------------------------------------------------
+#pragma mark NSCoding
+// -----------------------------------------------------------------------------
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+	[super init];
+	point_ = [decoder decodeCGPointForKey:@"point"];
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+	[encoder encodeCGPoint:point_  forKey:@"point"];
+}
+
+
 @end

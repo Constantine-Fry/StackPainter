@@ -8,6 +8,8 @@
 
 #import "CrazyPainterAppDelegate.h"
 #import "CrazyPainterViewController.h"
+#import "FileSystem.h"
+#import "AbstractCommand.h"
 
 @implementation CrazyPainterAppDelegate
 
@@ -16,18 +18,51 @@
 @synthesize commands = commands_;
 @synthesize model = model_;
 
+
+
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     // Override point for customization after app launch  
-	commands_ = [[Stack alloc]init];
+
+	dataFile_=  @"session.last";	
 	model_ = [[Model alloc]init];
+	
+	FileSystem *filesystem = [[FileSystem alloc]init];
+	self.commands = [filesystem ReadStackFromFile:dataFile_];
+	[filesystem release];
+	
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 }
 
+-(void)setCommands:(Stack*)stack{
+	[self ClearCommands];
+	[commands_ release];
+	
+	for(id<AbstractCommand> comm in stack.array)
+		[comm Do];
+	
+	commands_ = [stack retain];
+}
+
+-(void)ClearCommands{
+	id<AbstractCommand> command = [commands_ Pop];
+	while (nil != command) {
+		[command Undo];
+		[(id) command release];
+		command = [commands_ Pop];
+	}
+}
+
+-(void)applicationWillTerminate:(UIApplication *)application{
+	FileSystem *filesystem = [[FileSystem alloc]init];
+	[filesystem SaveStack:commands_ toFile:dataFile_];
+	[filesystem release];
+}
+
 
 - (void)dealloc {
-//	[points_ release];
-//	[shapes_ release];
+	//	[points_ release];
+	//	[shapes_ release];
 	[commands_ release];
     [viewController release];
     [window release];

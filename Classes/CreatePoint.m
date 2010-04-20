@@ -36,5 +36,22 @@
 }
 
 
+// -----------------------------------------------------------------------------
+#pragma mark NSCoding
+// -----------------------------------------------------------------------------
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+	//[super init];
+	point_ = [[decoder decodeObjectForKey:@"point_"] retain];
+	//[self Do];
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+	[encoder encodeObject:point_ forKey:@"point_"];
+}
+
 
 @end

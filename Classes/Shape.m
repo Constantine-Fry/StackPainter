@@ -106,4 +106,21 @@
 	return [stack autorelease];
 }
 
+// -----------------------------------------------------------------------------
+#pragma mark NSCoding
+// -----------------------------------------------------------------------------
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+	[super init];
+	type_ = [decoder decodeIntForKey:@"type"];
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+	[encoder encodeInt:type_  forKey:@"type"];
+}
+
+
 @end

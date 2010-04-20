@@ -17,13 +17,16 @@
 	Stack *commands_;
     UIWindow *window;
     CrazyPainterViewController *viewController;
+	NSString *dataFile_;
 }
 
-@property(nonatomic,readonly) Stack *commands;
+-(void)ClearCommands;
+@property(nonatomic,retain) Stack *commands;
 @property (nonatomic,retain) Model* model;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet CrazyPainterViewController *viewController;
+
 
 @end
 

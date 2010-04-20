@@ -54,4 +54,21 @@
 	return [array_ count];
 }
 
+
+// -----------------------------------------------------------------------------
+#pragma mark NSCoding
+// -----------------------------------------------------------------------------
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+	//[super init];
+	array_ = [[decoder decodeObjectForKey:@"stackArray"] retain];
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+	[encoder encodeObject:array_ forKey:@"stackArray"];
+}
+
 @end

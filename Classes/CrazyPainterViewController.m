@@ -8,6 +8,8 @@
 
 #import "CrazyPainterViewController.h"
 #import "CrazyPainterAppDelegate.h"
+#import "SmartAlertView.h"
+#import "FileSystem.h"
 
 
 
@@ -46,6 +48,44 @@
 	[createCircle release];
 }
 
+-(IBAction)ClearClick{
+	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[mainDelegate ClearCommands];
+	[self.view setNeedsDisplay];
+}
+
+-(IBAction)OpenClick{
+	FileSystem *fs = [[FileSystem alloc]init];
+	NSArray *files = [fs GetAllStacksInDocs];
+	[SmartAlertView ShowTable:@"Choose file" WithItems:files  
+								WithTarget:self andAction:@selector(OpenFile:)];
+	[fs release];
+}
+
+-(void)OpenFile:(NSString*)name {
+	if(nil == name)
+		return;
+	[self ClearClick];
+	FileSystem *fs = [[FileSystem alloc]init];
+	Stack *stack = [fs ReadStackFromFile:[name stringByAppendingPathExtension:@"stack"]];
+	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
+	mainDelegate.commands = stack;
+	[fs release];
+}
+
+-(IBAction)SaveClick{
+	[SmartAlertView ShowTextField:@"Input Filename" WithText:nil WithTarget:self andAction:@selector(SaveFile:)];
+}
+
+-(void)SaveFile:(NSString*)text{
+	if (nil == text) 
+		return;
+	FileSystem *filesystem = [[FileSystem alloc]init];
+	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[filesystem SaveStack:mainDelegate.commands toFile:[text stringByAppendingPathExtension:@"stack"]];
+	[filesystem release];
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { 
 	NSSet *arr = [event allTouches];
 	for(UITouch *touch in arr){
@@ -58,6 +98,8 @@
 	}
 	}
 } 
+
+
 
 /*
  // The designated initializer. Override to perform setup that is required before the view is loaded.

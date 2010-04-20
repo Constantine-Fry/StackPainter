@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class Stack;
-@interface Stack : NSObject {
+@interface Stack : NSObject<NSCoding> {
 	NSMutableArray *array_;
 }
 
