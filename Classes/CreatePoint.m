@@ -8,6 +8,8 @@
 
 #import "CreatePoint.h"
 #import "Dot.h"
+#import "Poof.h"
+
 
 @implementation CreatePoint
 
@@ -33,6 +35,9 @@
 -(void)Undo{
 	CrazyPainterAppDelegate *mainDelegate = (CrazyPainterAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[mainDelegate.model RemovePoint:point_];
+	Poof *poofView = [[Poof alloc]initWithCenter:point_.point];
+	[[mainDelegate.window.subviews objectAtIndex:0] addSubview:poofView] ;
+	[poofView release];
 }
 
 
