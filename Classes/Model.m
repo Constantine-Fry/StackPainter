@@ -61,7 +61,7 @@
 	[points_ Push:dot];
 	[self Update];
 }
-
+////33
 -(void)AddShape:(Shape*)shape{
 	[shapes_ Push:shape];
 	[self Update];

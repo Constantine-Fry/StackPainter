@@ -436,7 +436,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "26353374-09D7-4469-BCC4-18BB83930728";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "26353374-09D7-4469-BCC4-18BB83930728";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};

@@ -39,7 +39,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 4774FE4B1078935C00E54E19 /* CrazyPainter */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphonesimulator4.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* CrazyPainter */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* CrazyPainter */,
@@ -137,22 +137,19 @@
 					PBXFindDataSource_LocationID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 294392670;
-			PBXWorkspaceStateSaveDate = 294392670;
+			PBXPerProjectTemplateStateSaveDate = 299600308;
+			PBXWorkspaceStateSaveDate = 299600308;
 		};
 		perUserProjectItems = {
-			47028B36118602FC0041388E = 47028B36118602FC0041388E /* PBXTextBookmark */;
-			47028B37118602FC0041388E = 47028B37118602FC0041388E /* PBXBookmark */;
-			47028B38118602FC0041388E = 47028B38118602FC0041388E /* PBXBookmark */;
-			47028B39118602FC0041388E = 47028B39118602FC0041388E /* PBXBookmark */;
-			47028B3A118602FC0041388E = 47028B3A118602FC0041388E /* PBXBookmark */;
-			47028B3B118602FC0041388E = 47028B3B118602FC0041388E /* PBXBookmark */;
 			471EBF2D10A492830051AE37 = 471EBF2D10A492830051AE37 /* PBXTextBookmark */;
 			471EC0D110A55B4B0051AE37 = 471EC0D110A55B4B0051AE37 /* PBXTextBookmark */;
 			471EC10E10A562D60051AE37 = 471EC10E10A562D60051AE37 /* PBXTextBookmark */;
 			471EC1FA10A56D090051AE37 = 471EC1FA10A56D090051AE37 /* PBXTextBookmark */;
 			471EC26810A570980051AE37 = 471EC26810A570980051AE37 /* PBXTextBookmark */;
 			471EC2D610A57C6F0051AE37 = 471EC2D610A57C6F0051AE37 /* PBXTextBookmark */;
+			47282F4C11DB89DA00FAAF8B /* PBXTextBookmark */ = 47282F4C11DB89DA00FAAF8B /* PBXTextBookmark */;
+			47282F5511DB89F000FAAF8B /* PBXTextBookmark */ = 47282F5511DB89F000FAAF8B /* PBXTextBookmark */;
+			472B7A66119889FA0034E4B6 = 472B7A66119889FA0034E4B6 /* PBXTextBookmark */;
 			47328C061182C94400323DFD = 47328C061182C94400323DFD /* PBXTextBookmark */;
 			47328C071182C94400323DFD = 47328C071182C94400323DFD /* PBXTextBookmark */;
 			47328C081182C94400323DFD = 47328C081182C94400323DFD /* PBXTextBookmark */;
@@ -200,6 +197,7 @@
 			47C57BB3118362C2006400FA = 47C57BB3118362C2006400FA /* PBXTextBookmark */;
 			47C57BB4118362C2006400FA = 47C57BB4118362C2006400FA /* PBXTextBookmark */;
 			47D099DA107A67B8001882D5 = 47D099DA107A67B8001882D5 /* PBXTextBookmark */;
+			47D2A0E7118C15B60080D651 = 47D2A0E7118C15B60080D651 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 4774FE611078937100E54E19 /* Source Control */;
 		userBuildSettings = {
@@ -212,64 +210,6 @@
 			sepNavVisRange = "{0, 356}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
-	};
-	47028B36118602FC0041388E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 4774FFB5107901CF00E54E19 /* CreatePoint.m */;
-		name = "CreatePoint.m: 49";
-		rLen = 0;
-		rLoc = 1144;
-		rType = 0;
-		vrLen = 1155;
-		vrLoc = 191;
-	};
-	47028B37118602FC0041388E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 470848AE118205F000909AD8 /* 96-book.png */;
-	};
-	47028B38118602FC0041388E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 470848AC118205A600909AD8 /* 114-balloon.png */;
-	};
-	47028B39118602FC0041388E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 470848AA1182053D00909AD8 /* 82-dogpaw.png */;
-	};
-	47028B3A118602FC0041388E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 470848A51182043900909AD8 /* 40-inbox.png */;
-	};
-	47028B3B118602FC0041388E /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 470848A51182043900909AD8 /* 40-inbox.png */;
-	};
-	470848A51182043900909AD8 /* 40-inbox.png */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = image.png;
-		name = "40-inbox.png";
-		path = "/Volumes/second/work/projects/CrazyPainter/40-inbox.png";
-		sourceTree = "<absolute>";
-	};
-	470848AA1182053D00909AD8 /* 82-dogpaw.png */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = image.png;
-		name = "82-dogpaw.png";
-		path = "/Users/fry/Downloads/icons/icons/82-dogpaw.png";
-		sourceTree = "<absolute>";
-	};
-	470848AC118205A600909AD8 /* 114-balloon.png */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = image.png;
-		name = "114-balloon.png";
-		path = "/Volumes/second/work/projects/CrazyPainter/114-balloon.png";
-		sourceTree = "<absolute>";
-	};
-	470848AE118205F000909AD8 /* 96-book.png */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = image.png;
-		name = "96-book.png";
-		path = "/Users/fry/Downloads/icons/icons/96-book.png";
-		sourceTree = "<absolute>";
 	};
 	471EBF2D10A492830051AE37 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -395,6 +335,36 @@
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 981;
+	};
+	47282F4C11DB89DA00FAAF8B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4774FFB5107901CF00E54E19 /* CreatePoint.m */;
+		name = "CreatePoint.m: 12";
+		rLen = 0;
+		rLoc = 191;
+		rType = 0;
+		vrLen = 1143;
+		vrLoc = 0;
+	};
+	47282F5511DB89F000FAAF8B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4774FFB5107901CF00E54E19 /* CreatePoint.m */;
+		name = "CreatePoint.m: 12";
+		rLen = 0;
+		rLoc = 191;
+		rType = 0;
+		vrLen = 1104;
+		vrLoc = 0;
+	};
+	472B7A66119889FA0034E4B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4774FFB5107901CF00E54E19 /* CreatePoint.m */;
+		name = "CreatePoint.m: 63";
+		rLen = 0;
+		rLoc = 1355;
+		rType = 0;
+		vrLen = 1143;
+		vrLoc = 0;
 	};
 	4730F5DC115BD08900CA0960 /* PairDot.h */ = {
 		uiCtxt = {
@@ -696,8 +666,8 @@
 	4774FFB5107901CF00E54E19 /* CreatePoint.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {824, 882}}";
-			sepNavSelRange = "{1144, 0}";
-			sepNavVisRange = "{191, 1155}";
+			sepNavSelRange = "{191, 0}";
+			sepNavVisRange = "{0, 1104}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};
@@ -1204,6 +1174,16 @@
 		name = NSEnumerator.h;
 		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnumerator.h;
 		sourceTree = "<absolute>";
+	};
+	47D2A0E7118C15B60080D651 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4774FFB5107901CF00E54E19 /* CreatePoint.m */;
+		name = "CreatePoint.m: 63";
+		rLen = 0;
+		rLoc = 1355;
+		rType = 0;
+		vrLen = 1143;
+		vrLoc = 0;
 	};
 	8D1107310486CEB800E47090 /* CrazyPainter-Info.plist */ = {
 		uiCtxt = {
